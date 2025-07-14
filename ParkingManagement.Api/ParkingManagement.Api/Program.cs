@@ -1,6 +1,8 @@
 
 using ParkingManagement.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
+using ParkingManagement.Domain.RepositoryInterfaces;
+using ParkingManagement.Infrastructure.Repositories;
 
 namespace ParkingManagement.Api
 {
@@ -28,6 +30,9 @@ namespace ParkingManagement.Api
 
             builder.Services.AddDbContext<ParkingManagementDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<IPriceRepository, PriceRepository>();
+            builder.Services.AddScoped<IParkingSessionRepository, ParkingSessionRepository>();
 
             var app = builder.Build();
 
