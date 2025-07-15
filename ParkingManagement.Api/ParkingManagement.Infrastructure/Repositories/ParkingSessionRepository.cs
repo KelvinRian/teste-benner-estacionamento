@@ -1,4 +1,5 @@
-﻿using ParkingManagement.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ParkingManagement.Domain.Entities;
 using ParkingManagement.Domain.RepositoryInterfaces;
 using ParkingManagement.Infrastructure.Context;
 
@@ -13,19 +14,23 @@ namespace ParkingManagement.Infrastructure.Repositories
             _context = parkingManagementDbContext;
         }
 
-        public Task Create(ParkingSession parkingSession)
+        public async Task Create(ParkingSession parkingSession)
         {
-            throw new NotImplementedException();
+            await _context.ParkingSessions.AddAsync(parkingSession);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<ParkingSession>> GetAll()
+        public async Task<IEnumerable<ParkingSession>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.ParkingSessions
+                .OrderByDescending(x => x.EntryTime)
+                .ToListAsync();
         }
 
-        public Task Update(ParkingSession parkingSession)
+        public async Task Update(ParkingSession parkingSession)
         {
-            throw new NotImplementedException();
+            _context.ParkingSessions.Update(parkingSession);
+            await _context.SaveChangesAsync();
         }
     }
 }

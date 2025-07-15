@@ -12,8 +12,8 @@ namespace ParkingManagement.Infrastructure.Context
                 
         }
 
-        public DbSet<Price> Prices { get; set; }
-        public DbSet<ParkingSession> ParkingSessions { get; set; }
+        public virtual DbSet<Price> Prices { get; set; }
+        public virtual DbSet<ParkingSession> ParkingSessions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
