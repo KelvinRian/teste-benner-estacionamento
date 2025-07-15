@@ -4,7 +4,6 @@ using ParkingManagement.Domain.Commands;
 using ParkingManagement.Domain.Entities;
 using ParkingManagement.Infrastructure.Context;
 using ParkingManagement.Infrastructure.Repositories;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ParkingManagement.Tests.Infrastructure.Repositories
 {
@@ -40,7 +39,7 @@ namespace ParkingManagement.Tests.Infrastructure.Repositories
         }
 
         [Fact]
-        public async Task GetAll_ShouldReturnAllSessions()
+        public async Task shouldGetAll()
         {
             // Arrange
             var mockContext = Create.MockedDbContextFor<ParkingManagementDbContext>();

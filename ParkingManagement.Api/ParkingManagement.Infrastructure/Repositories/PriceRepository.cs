@@ -1,4 +1,5 @@
-﻿using ParkingManagement.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ParkingManagement.Domain.Entities;
 using ParkingManagement.Domain.RepositoryInterfaces;
 using ParkingManagement.Infrastructure.Context;
 
@@ -13,29 +14,48 @@ namespace ParkingManagement.Infrastructure.Repositories
             _context = parkingManagementDbContext;
         }
 
-        public Task Create(Price price)
+        public async Task Create(Price price)
         {
-            throw new NotImplementedException();
+            await _context.Prices.AddAsync(price);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Delete()
+        public async Task Delete(Guid priceId)
         {
-            throw new NotImplementedException();
+            var price = _context.Prices.FirstOrDefault(x => x.Id == priceId);
+            if (price != null)
+            {
+                _context.Prices.Remove(price);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task<IEnumerable<Price>> GetAll()
+        public async Task<IEnumerable<Price>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Prices.ToListAsync();
         }
 
-        public Task<Price> GetLatestApplicableFor(DateTime parkingSessionEntryDate)
+        public async Task<Price> GetLatestApplicableFor(DateTime parkingSessionEntryDate)
         {
-            throw new NotImplementedException();
+            var price = await _context.Prices
+                .Where(x => x.EffectivePeriodStart <= parkingSessionEntryDate && x.EffectivePeriodEnd >= parkingSessionEntryDate)
+                .OrderByDescending(x => x.CreationDate)
+                .FirstOrDefaultAsync();
+
+            if (price == null)
+            {
+                price = await _context.Prices
+                    .OrderByDescending(x => x.EffectivePeriodEnd)
+                    .FirstOrDefaultAsync();
+            }
+
+            return price;
         }
 
-        public Task<bool> HasAnyParkingSession(Guid priceId)
+        public async Task<bool> HasAnyParkingSession(Guid priceId)
         {
-            throw new NotImplementedException();
+            return await _context.ParkingSessions
+                .AnyAsync(x => x.PriceId == priceId);
         }
     }
 }
