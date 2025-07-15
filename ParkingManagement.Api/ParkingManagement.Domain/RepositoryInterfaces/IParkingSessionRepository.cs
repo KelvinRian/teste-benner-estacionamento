@@ -9,5 +9,7 @@ namespace ParkingManagement.Domain.RepositoryInterfaces
         Task Update(ParkingSession parkingSession);
 
         Task<IEnumerable<ParkingSession>> GetAll();
+
+        Task<ParkingSession> GetById(Guid id);
     }
 }

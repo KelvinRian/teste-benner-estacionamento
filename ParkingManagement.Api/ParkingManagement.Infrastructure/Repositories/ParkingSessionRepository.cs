@@ -27,6 +27,13 @@ namespace ParkingManagement.Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<ParkingSession> GetById(Guid id)
+        {
+            return await _context.ParkingSessions
+                .Include(x => x.Price)
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         public async Task Update(ParkingSession parkingSession)
         {
             _context.ParkingSessions.Update(parkingSession);
