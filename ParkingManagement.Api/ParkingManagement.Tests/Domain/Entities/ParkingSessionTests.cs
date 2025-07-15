@@ -1,7 +1,7 @@
 ﻿using ParkingManagement.Domain.Commands;
 using ParkingManagement.Domain.Entities;
 
-namespace ParkingManagement.Tests.Domain
+namespace ParkingManagement.Tests.Domain.Entities
 {
     public class ParkingSessionTests
     {

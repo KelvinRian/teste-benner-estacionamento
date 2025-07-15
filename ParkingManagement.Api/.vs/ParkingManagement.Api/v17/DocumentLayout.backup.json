@@ -57,7 +57,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 174,
+          "DockedWidth": 252,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -68,7 +68,7 @@
               "RelativeDocumentMoniker": "ParkingManagement.Tests\\Infrastructure\\Repositories\\PriceRepositoryTests.cs",
               "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Tests\\Infrastructure\\Repositories\\PriceRepositoryTests.cs",
               "RelativeToolTip": "ParkingManagement.Tests\\Infrastructure\\Repositories\\PriceRepositoryTests.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAQwM0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANsAAAAAAAAAAADwv/UAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-15T03:01:59.851Z",
               "EditorCaption": ""
@@ -154,7 +154,7 @@
           ]
         },
         {
-          "DockedWidth": 226,
+          "DockedWidth": 148,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -178,7 +178,7 @@
               "RelativeDocumentMoniker": "ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
               "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
               "RelativeToolTip": "ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDgAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAA8wDgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T22:54:44.998Z",
               "EditorCaption": ""

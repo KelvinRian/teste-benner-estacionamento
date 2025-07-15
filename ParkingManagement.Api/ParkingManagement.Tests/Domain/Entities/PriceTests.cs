@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParkingManagement.Tests.Domain
+namespace ParkingManagement.Tests.Domain.Entities
 {
     public class PriceTests
     {

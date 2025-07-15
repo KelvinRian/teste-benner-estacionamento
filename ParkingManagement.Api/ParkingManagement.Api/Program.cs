@@ -3,6 +3,7 @@ using ParkingManagement.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using ParkingManagement.Domain.RepositoryInterfaces;
 using ParkingManagement.Infrastructure.Repositories;
+using ParkingManagement.Domain.Facades;
 
 namespace ParkingManagement.Api
 {
@@ -33,6 +34,9 @@ namespace ParkingManagement.Api
 
             builder.Services.AddScoped<IPriceRepository, PriceRepository>();
             builder.Services.AddScoped<IParkingSessionRepository, ParkingSessionRepository>();
+
+            builder.Services.AddScoped<IPriceFacade, PriceFacade>();
+            builder.Services.AddScoped<IParkingSessionFacade, ParkingSessionFacade>();
 
             var app = builder.Build();
 
