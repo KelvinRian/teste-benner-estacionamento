@@ -1,7 +1,7 @@
 import { useState  } from "react";
 import { create } from "../services/priceApi";
 
-function PriceRegister() {
+function PriceRegister({ onSuccess }) {
     const [baseValue, setBaseValue] = useState('');
     const [extraTimeValue, setExtraTimeValue] = useState('');
     const [effectivePeriodStart, setEffectivePeriodStart] = useState('');
@@ -23,11 +23,15 @@ function PriceRegister() {
             };
 
             await create(body);
+            setError('');
             setMessage('Registro criado com sucesso!');
             setBaseValue('');
+            setExtraTimeValue('');
             setEffectivePeriodStart('');
             setEffectivePeriodEnd('');
+            if (onSuccess) onSuccess();
         } catch (error) {
+            setMessage('');
             setError('Erro ao salvar');
         };
     }

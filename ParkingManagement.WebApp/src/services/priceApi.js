@@ -6,9 +6,23 @@ export async function create(body) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     });
-    console.log('requisitado');
     console.log(response);
     if (!response.ok) throw new Error('Erro ao criar registro');
     if (response.status === 204) return;
     return await response.json();
+};
+
+export async function get() {
+    const response = await fetch(BASE_URL);
+    console.log(response);
+    if (!response.ok) throw new Error('Erro ao buscar registros');
+    return await response.json();
+};
+
+export async function deletePrice(id) {
+    const response = await fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE'
+    });
+    console.log(response);
+    if (!response.ok) throw new Error('Erro ao excluir registro');
 };
