@@ -14,36 +14,9 @@ namespace ParkingManagement.Domain.Services
             var baseValue = parkingSession?.Price?.BaseValue ?? 0;
             var extraTimeValue = parkingSession?.Price?.ExtraTimeValue ?? 0;
             var duration = parkingSession?.ExitTime - parkingSession?.EntryTime;
-            decimal totalPayable;
-            double numberOfHoursToPay;
-            var hours = duration.Value.Hours;
-            var minutes = duration.Value - TimeSpan.FromHours(hours);
 
-            if (duration <= _halfAnHour)
-            {
-                numberOfHoursToPay = 0.5;
-            }
-            else if (duration <= _oneHour + _toleranceTime)
-            {
-                numberOfHoursToPay = 1;
-            }
-            else if (minutes > _toleranceTime)
-            {
-                numberOfHoursToPay = hours++;
-            }
-            else
-            {
-                numberOfHoursToPay = hours;
-            }
-
-            if (duration <= _halfAnHour)
-            {
-                totalPayable = baseValue / 2;
-            }
-            else
-            {
-                totalPayable = baseValue + ((decimal)numberOfHoursToPay - 1) * extraTimeValue;
-            }
+            double numberOfHoursToPay = GetNumberOfHoursToPay(duration);
+            decimal totalPayable = GetTotalPayable(baseValue, extraTimeValue, duration, numberOfHoursToPay);
 
             var paymentoDto = new PaymentDto()
             {
@@ -51,10 +24,32 @@ namespace ParkingManagement.Domain.Services
                 NumberOfHoursToPay = numberOfHoursToPay,
                 PriceBaseValue = baseValue,
                 TotalPayable = totalPayable
-
             };
 
             return paymentoDto;
+        }
+
+        private static double GetNumberOfHoursToPay(TimeSpan? duration)
+        {
+            var hours = duration.Value.Hours;
+            var minutes = duration.Value - TimeSpan.FromHours(hours);
+
+            if (duration <= _halfAnHour)
+                return 0.5;
+            else if (duration <= _oneHour + _toleranceTime)
+                return 1;
+            else if (minutes > _toleranceTime)
+                return hours++;
+            else
+                return hours;
+        }
+
+        private static decimal GetTotalPayable(decimal baseValue, decimal extraTimeValue, TimeSpan? duration, double numberOfHoursToPay)
+        {
+            if (duration <= _halfAnHour)
+                return baseValue / 2;
+            else
+                return baseValue + ((decimal)numberOfHoursToPay - 1) * extraTimeValue;
         }
     }
 }

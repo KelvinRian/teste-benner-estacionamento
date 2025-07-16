@@ -57,5 +57,11 @@ namespace ParkingManagement.Infrastructure.Repositories
             return await _context.ParkingSessions
                 .AnyAsync(x => x.PriceId == priceId);
         }
+
+        public async Task<Price> GetById(Guid id)
+        {
+            return await _context.Prices
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

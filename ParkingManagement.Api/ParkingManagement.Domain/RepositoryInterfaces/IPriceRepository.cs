@@ -13,5 +13,7 @@ namespace ParkingManagement.Domain.RepositoryInterfaces
         Task<bool> HasAnyParkingSession(Guid priceId);
 
         Task Delete(Guid priceId);
+
+        Task<Price> GetById(Guid id);
     }
 }

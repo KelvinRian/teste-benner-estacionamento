@@ -2,6 +2,7 @@
 using ParkingManagement.Domain.Dtos;
 using ParkingManagement.Domain.Entities;
 using ParkingManagement.Domain.RepositoryInterfaces;
+using ParkingManagement.Domain.Services;
 
 namespace ParkingManagement.Domain.Facades
 {
@@ -9,11 +10,13 @@ namespace ParkingManagement.Domain.Facades
     {
         private IParkingSessionRepository _parkingSessionRepository;
         private IPriceRepository _priceRepository;
+        private IPaymentCalculatorService _paymentCalculatorService;
 
-        public ParkingSessionFacade(IParkingSessionRepository parkingSessionRepository, IPriceRepository priceRepository)
+        public ParkingSessionFacade(IParkingSessionRepository parkingSessionRepository, IPriceRepository priceRepository, IPaymentCalculatorService paymentCalculatorService)
         {
             _parkingSessionRepository = parkingSessionRepository;
             _priceRepository = priceRepository;
+            _paymentCalculatorService = paymentCalculatorService;
         }
 
         public async Task Entry(EntryCommand command)
@@ -58,9 +61,18 @@ namespace ParkingManagement.Domain.Facades
             await _parkingSessionRepository.Update(parkingSession);
         }
 
-        public Task<IEnumerable<ParkingSessionDto>> GetAll()
+        public async Task<IEnumerable<ParkingSessionDto>> GetAll()
         {
-            throw new NotImplementedException();
+            var parkingSessions = await _parkingSessionRepository.GetAll();
+
+            return parkingSessions.Select(x => new ParkingSessionDto
+            {
+                Id = x.Id,
+                LicensePlate = x.LicensePlate,
+                EntryTime = x.EntryTime,
+                ExitTime = x.ExitTime,
+                Payment = _paymentCalculatorService.CalculatePayment(x)
+            });  
         }
     }
 }

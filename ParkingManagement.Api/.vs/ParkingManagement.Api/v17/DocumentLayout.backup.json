@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F978A391-E20F-4558-94DF-36DC91660944}|ParkingManagement.Tests\\ParkingManagement.Tests.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.tests\\domain\\services\\paymentcalculatorservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F978A391-E20F-4558-94DF-36DC91660944}|ParkingManagement.Tests\\ParkingManagement.Tests.csproj|solutionrelative:parkingmanagement.tests\\domain\\services\\paymentcalculatorservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.domain\\services\\paymentcalculatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|solutionrelative:parkingmanagement.domain\\services\\paymentcalculatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.domain\\dtos\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|solutionrelative:parkingmanagement.domain\\dtos\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.domain\\dtos\\parkingsessiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|solutionrelative:parkingmanagement.domain\\dtos\\parkingsessiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.domain\\services\\ipaymentcalculatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|solutionrelative:parkingmanagement.domain\\services\\ipaymentcalculatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC35E95B-3138-41A4-A254-EF3E039E4678}|ParkingManagement.Api\\ParkingManagement.Api.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC35E95B-3138-41A4-A254-EF3E039E4678}|ParkingManagement.Api\\ParkingManagement.Api.csproj|solutionrelative:parkingmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.domain\\facades\\parkingsessionfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{761A5173-EF7A-4C6F-B34A-A7F693745B48}|ParkingManagement.Domain\\ParkingManagement.Domain.csproj|solutionrelative:parkingmanagement.domain\\facades\\parkingsessionfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E97BCF61-2177-4FE1-9186-12EFC8415FE1}|ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.infrastructure\\repositories\\parkingsessionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E97BCF61-2177-4FE1-9186-12EFC8415FE1}|ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj|solutionrelative:parkingmanagement.infrastructure\\repositories\\parkingsessionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E97BCF61-2177-4FE1-9186-12EFC8415FE1}|ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.infrastructure\\repositories\\pricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E97BCF61-2177-4FE1-9186-12EFC8415FE1}|ParkingManagement.Infrastructure\\ParkingManagement.Infrastructure.csproj|solutionrelative:parkingmanagement.infrastructure\\repositories\\pricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC35E95B-3138-41A4-A254-EF3E039E4678}|ParkingManagement.Api\\ParkingManagement.Api.csproj|c:\\users\\kelvi\\desktop\\projects\\teste-benner-estacionamento\\parkingmanagement.api\\parkingmanagement.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC35E95B-3138-41A4-A254-EF3E039E4678}|ParkingManagement.Api\\ParkingManagement.Api.csproj|solutionrelative:parkingmanagement.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,126 +13,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 210,
+          "DockedWidth": 208,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PaymentCalculatorServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Tests\\Domain\\Services\\PaymentCalculatorServiceTests.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Tests\\Domain\\Services\\PaymentCalculatorServiceTests.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Tests\\Domain\\Services\\PaymentCalculatorServiceTests.cs",
-              "RelativeToolTip": "ParkingManagement.Tests\\Domain\\Services\\PaymentCalculatorServiceTests.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAwwG4AAAAAAAAAAAAAAA==",
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "ParkingManagement.Api\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "ParkingManagement.Api\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:34:35.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PaymentDto.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Dtos\\PaymentDto.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Domain\\Dtos\\PaymentDto.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Dtos\\PaymentDto.cs",
-              "RelativeToolTip": "ParkingManagement.Domain\\Dtos\\PaymentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:31:18.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IPaymentCalculatorService.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Services\\IPaymentCalculatorService.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Domain\\Services\\IPaymentCalculatorService.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Services\\IPaymentCalculatorService.cs",
-              "RelativeToolTip": "ParkingManagement.Domain\\Services\\IPaymentCalculatorService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:27:00.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Api\\Program.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Api\\Program.cs",
-              "RelativeToolTip": "ParkingManagement.Api\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAgwCkAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:33:55.241Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ParkingSessionDto.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Dtos\\ParkingSessionDto.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Domain\\Dtos\\ParkingSessionDto.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Dtos\\ParkingSessionDto.cs",
-              "RelativeToolTip": "ParkingManagement.Domain\\Dtos\\ParkingSessionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:29:13.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ParkingSessionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Infrastructure\\Repositories\\ParkingSessionRepository.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Infrastructure\\Repositories\\ParkingSessionRepository.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Infrastructure\\Repositories\\ParkingSessionRepository.cs",
-              "RelativeToolTip": "ParkingManagement.Infrastructure\\Repositories\\ParkingSessionRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCAAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:28:33.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ParkingSessionFacade.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Facades\\ParkingSessionFacade.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Domain\\Facades\\ParkingSessionFacade.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Facades\\ParkingSessionFacade.cs",
-              "RelativeToolTip": "ParkingManagement.Domain\\Facades\\ParkingSessionFacade.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowC8AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:27:55.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PriceRepository.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
-              "RelativeToolTip": "ParkingManagement.Infrastructure\\Repositories\\PriceRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T12:50:54.895Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 170,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PaymentCalculatorService.cs",
-              "DocumentMoniker": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Services\\PaymentCalculatorService.cs",
-              "RelativeDocumentMoniker": "ParkingManagement.Domain\\Services\\PaymentCalculatorService.cs",
-              "ToolTip": "C:\\Users\\kelvi\\Desktop\\Projects\\teste-benner-estacionamento\\ParkingManagement.Api\\ParkingManagement.Domain\\Services\\PaymentCalculatorService.cs",
-              "RelativeToolTip": "ParkingManagement.Domain\\Services\\PaymentCalculatorService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIA3wCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T14:33:36.271Z",
+              "WhenOpened": "2025-07-15T20:49:47.971Z",
               "EditorCaption": ""
             }
           ]

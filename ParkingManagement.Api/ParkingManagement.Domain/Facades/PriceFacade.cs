@@ -1,5 +1,6 @@
 ﻿using ParkingManagement.Domain.Commands;
 using ParkingManagement.Domain.Dtos;
+using ParkingManagement.Domain.Entities;
 using ParkingManagement.Domain.RepositoryInterfaces;
 
 namespace ParkingManagement.Domain.Facades
@@ -13,19 +14,29 @@ namespace ParkingManagement.Domain.Facades
             _priceRepository = priceRepository;
         }
 
-        public Task Create(CreatePriceCommand command)
+        public async Task Create(CreatePriceCommand command)
         {
-            throw new NotImplementedException();
+            var price = new Price(command);
+            await _priceRepository.Create(price);
         }
 
-        public Task Delete(Guid priceId)
+        public async Task Delete(Guid priceId)
         {
-            throw new NotImplementedException();
+            await _priceRepository.Delete(priceId);
         }
 
-        public Task<IEnumerable<PriceDto>> GetAll()
+        public async Task<IEnumerable<PriceDto>> GetAll()
         {
-            throw new NotImplementedException();
+            var prices = await _priceRepository.GetAll();
+
+            return prices.Select(x => new PriceDto
+            {
+                Id = x.Id,
+                BaseValue = x.BaseValue,
+                ExtraTimeValue = x.ExtraTimeValue,
+                EffectivePeriodStart = x.EffectivePeriodStart,
+                EffectivePeriodEnd = x.EffectivePeriodEnd
+            });
         }
     }
 }
