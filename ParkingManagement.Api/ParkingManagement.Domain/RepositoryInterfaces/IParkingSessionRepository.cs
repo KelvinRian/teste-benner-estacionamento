@@ -11,5 +11,7 @@ namespace ParkingManagement.Domain.RepositoryInterfaces
         Task<IEnumerable<ParkingSession>> GetAll();
 
         Task<ParkingSession> GetById(Guid id);
+
+        Task<ParkingSession> GetByLicensePlate(string licensePlate);
     }
 }

@@ -65,14 +65,28 @@ namespace ParkingManagement.Domain.Facades
         {
             var parkingSessions = await _parkingSessionRepository.GetAll();
 
-            return parkingSessions.Select(x => new ParkingSessionDto
+            return parkingSessions.Select(CreateParkingSessionDto);  
+        }
+
+        private ParkingSessionDto CreateParkingSessionDto(ParkingSession parkingSession)
+        {
+            return new ParkingSessionDto
             {
-                Id = x.Id,
-                LicensePlate = x.LicensePlate,
-                EntryTime = x.EntryTime,
-                ExitTime = x.ExitTime,
-                Payment = _paymentCalculatorService.CalculatePayment(x)
-            });  
+                Id = parkingSession.Id,
+                LicensePlate = parkingSession.LicensePlate,
+                EntryTime = parkingSession.EntryTime,
+                ExitTime = parkingSession.ExitTime,
+                Payment = _paymentCalculatorService.CalculatePayment(parkingSession)
+            };
+        }
+
+        public async Task<ParkingSessionDto> GetByLicensePlate(string licensePlate)
+        {
+            var parkingSession = await _parkingSessionRepository.GetByLicensePlate(licensePlate);
+            if (parkingSession == null)
+                return new ParkingSessionDto();
+
+            return CreateParkingSessionDto(parkingSession);
         }
     }
 }

@@ -39,5 +39,12 @@ namespace ParkingManagement.Infrastructure.Repositories
             _context.ParkingSessions.Update(parkingSession);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<ParkingSession> GetByLicensePlate(string licensePlate)
+        {
+            return await _context
+                 .ParkingSessions
+                 .FirstOrDefaultAsync(x => x.LicensePlate.Trim().ToLower() == licensePlate.Trim().ToLower());
+        }
     }
 }

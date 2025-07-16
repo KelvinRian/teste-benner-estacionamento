@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ParkingManagement.Domain.Commands;
 using ParkingManagement.Domain.Dtos;
 using ParkingManagement.Domain.Facades;
 
@@ -16,21 +17,36 @@ namespace ParkingManagement.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create()
+        public async Task<ActionResult> Create([FromBody] CreatePriceCommand command)
         {
-            return NoContent();
+            try
+            {
+                await _priceFacade.Create(command);
+                return Ok();
+            } catch (Exception e)
+            {
+                return NoContent();
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PriceDto>>> Get()
         {
-            return NoContent();
+            var prices = await _priceFacade.GetAll();
+            return Ok(prices);
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete([FromRoute] Guid id)
         {
-            return NoContent();
+            try
+            {
+                await _priceFacade.Delete(id);
+                return Ok();
+            } catch (Exception e)
+            {
+                return NoContent();
+            }
         }
     }
 }

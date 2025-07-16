@@ -8,5 +8,6 @@ namespace ParkingManagement.Domain.Facades
         Task Entry(EntryCommand command);
         Task Exit(Guid parkingSessionId);
         Task<IEnumerable<ParkingSessionDto>> GetAll();
+        Task<ParkingSessionDto> GetByLicensePlate(string licensePlate);
     }
 }
