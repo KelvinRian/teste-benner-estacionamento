@@ -22,10 +22,11 @@ namespace ParkingManagement.Api.Controllers
             try
             {
                 await _priceFacade.Create(command);
-                return Ok();
-            } catch (Exception e)
-            {
                 return NoContent();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, $"Erro interno: {e.Message}");
             }
         }
 

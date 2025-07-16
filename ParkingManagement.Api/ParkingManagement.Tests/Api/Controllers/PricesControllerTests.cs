@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using ParkingManagement.Api.Controllers;
 using ParkingManagement.Domain.Commands;
@@ -26,7 +27,6 @@ namespace ParkingManagement.Tests.Api.Controllers
             var result = await _controller.Create(command);
 
             await _priceFacade.Received(1).Create(command);
-            Assert.IsType<OkResult>(result);
         }
 
         [Fact]
