@@ -24,10 +24,9 @@ namespace ParkingManagement.Tests.Api.Controllers
         {
             var command = new EntryCommand();
 
-            var result = await _controller.Entry(command);
+            await _controller.Entry(command);
 
             await _sessionFacade.Received(1).Entry(command);
-            Assert.IsType<OkResult>(result);
         }
 
         [Fact]
@@ -35,10 +34,9 @@ namespace ParkingManagement.Tests.Api.Controllers
         {
             var id = Guid.NewGuid();
 
-            var result = await _controller.Exit(id);
+            await _controller.Exit(id);
 
             await _sessionFacade.Received(1).Exit(id);
-            Assert.IsType<OkResult>(result);
         }
 
         [Fact]

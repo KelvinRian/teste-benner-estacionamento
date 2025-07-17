@@ -15,7 +15,7 @@ function PricesTable({ prices, onDeleteSuccess }) {
     }
 
     return (
-        <div div style={{ padding: '20px' }}>
+        <div style={{ padding: '20px' }}>
             <h2>Tabela de Preços</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
 

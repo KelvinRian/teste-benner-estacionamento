@@ -13,10 +13,23 @@ namespace ParkingManagement.Domain.Services
         {
             var baseValue = parkingSession?.Price?.BaseValue ?? 0;
             var extraTimeValue = parkingSession?.Price?.ExtraTimeValue ?? 0;
-            var duration = parkingSession?.ExitTime - parkingSession?.EntryTime;
 
-            double numberOfHoursToPay = GetNumberOfHoursToPay(duration);
-            decimal totalPayable = GetTotalPayable(baseValue, extraTimeValue, duration, numberOfHoursToPay);
+            TimeSpan? duration;
+            double numberOfHoursToPay = 0;
+            decimal totalPayable = 0;
+
+            var finishedSession = parkingSession?.ExitTime.HasValue ?? false;
+
+            if (finishedSession)
+            {
+                duration = parkingSession?.ExitTime - parkingSession?.EntryTime;
+                numberOfHoursToPay = GetNumberOfHoursToPay(duration);
+                totalPayable = GetTotalPayable(baseValue, extraTimeValue, duration, numberOfHoursToPay);
+            }
+            else
+            {
+                duration = DateTime.UtcNow - parkingSession?.EntryTime;
+            }
 
             var paymentoDto = new PaymentDto()
             {
@@ -31,6 +44,9 @@ namespace ParkingManagement.Domain.Services
 
         private static double GetNumberOfHoursToPay(TimeSpan? duration)
         {
+            if (!duration.HasValue)
+                return 0;
+
             var hours = duration.Value.Hours;
             var minutes = duration.Value - TimeSpan.FromHours(hours);
 
@@ -46,6 +62,9 @@ namespace ParkingManagement.Domain.Services
 
         private static decimal GetTotalPayable(decimal baseValue, decimal extraTimeValue, TimeSpan? duration, double numberOfHoursToPay)
         {
+            if (!duration.HasValue)
+                return 0;
+
             if (duration <= _halfAnHour)
                 return baseValue / 2;
             else

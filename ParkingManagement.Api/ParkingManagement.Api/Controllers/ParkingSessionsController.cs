@@ -24,10 +24,10 @@ namespace ParkingManagement.Api.Controllers
             try
             {
                 await _parkingSessionFacade.Entry(command);
-                return Ok();
+                return NoContent();
             } catch(Exception e)
             {
-                return NoContent();
+                return StatusCode(500, $"Erro interno: {e.Message}");
             }
         }
 
@@ -37,11 +37,11 @@ namespace ParkingManagement.Api.Controllers
             try
             {
                 await _parkingSessionFacade.Exit(id);
-                return Ok();
+                return NoContent();
             }
             catch (Exception e)
             {
-                return NoContent();
+                return StatusCode(500, $"Erro interno: {e.Message}");
             }
         }
 
