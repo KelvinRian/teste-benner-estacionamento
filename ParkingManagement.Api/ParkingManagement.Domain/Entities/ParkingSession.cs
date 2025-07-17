@@ -9,6 +9,7 @@ namespace ParkingManagement.Domain.Entities
         public DateTime? ExitTime { get; set; }
         public Guid PriceId { get; set; }
         public Price Price { get; set; }
+        public bool Finished { get; set; } = false;
 
         private ParkingSession() { }
 
@@ -22,6 +23,7 @@ namespace ParkingManagement.Domain.Entities
         public void Exit()
         {
             ExitTime = DateTime.UtcNow;
+            Finished = true;
         }
     }
 }

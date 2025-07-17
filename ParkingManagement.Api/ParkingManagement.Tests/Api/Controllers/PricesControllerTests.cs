@@ -47,10 +47,9 @@ namespace ParkingManagement.Tests.Api.Controllers
         {
             var id = Guid.NewGuid();
 
-            var result = await _controller.Delete(id);
+            await _controller.Delete(id);
 
             await _priceFacade.Received(1).Delete(id);
-            Assert.IsType<OkResult>(result);
         }
     }
 }

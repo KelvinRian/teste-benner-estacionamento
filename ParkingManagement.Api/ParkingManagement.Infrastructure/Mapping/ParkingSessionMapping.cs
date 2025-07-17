@@ -12,6 +12,7 @@ namespace ParkingManagement.Infrastructure.Mapping
             builder.Property(x => x.LicensePlate).IsRequired().HasMaxLength(8);
             builder.Property(x => x.EntryTime).IsRequired();
             builder.Property(x => x.ExitTime);
+            builder.Property(x => x.Finished);
             builder.HasOne(x => x.Price)
                 .WithMany()
                 .HasForeignKey(x => x.PriceId);

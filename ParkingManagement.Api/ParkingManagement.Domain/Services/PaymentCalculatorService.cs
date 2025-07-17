@@ -18,18 +18,13 @@ namespace ParkingManagement.Domain.Services
             double numberOfHoursToPay = 0;
             decimal totalPayable = 0;
 
-            var finishedSession = parkingSession?.ExitTime.HasValue ?? false;
-
-            if (finishedSession)
-            {
+            if (parkingSession?.Finished ?? false)
                 duration = parkingSession?.ExitTime - parkingSession?.EntryTime;
-                numberOfHoursToPay = GetNumberOfHoursToPay(duration);
-                totalPayable = GetTotalPayable(baseValue, extraTimeValue, duration, numberOfHoursToPay);
-            }
             else
-            {
                 duration = DateTime.UtcNow - parkingSession?.EntryTime;
-            }
+
+            numberOfHoursToPay = GetNumberOfHoursToPay(duration);
+            totalPayable = GetTotalPayable(baseValue, extraTimeValue, duration, numberOfHoursToPay);
 
             var paymentoDto = new PaymentDto()
             {

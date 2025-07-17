@@ -6,11 +6,12 @@ function PricesTable({ prices, onDeleteSuccess }) {
 
 
     async function handleDelete(id) {
+        setError('')
         try {
             await deletePrice(id);
             if (onDeleteSuccess) onDeleteSuccess();
         } catch (error) {
-            setError('Erro ao excluir.');
+            setError('Não foi possível excluir.');
         }
     }
 

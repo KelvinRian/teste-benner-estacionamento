@@ -23,6 +23,7 @@ namespace ParkingManagement.Infrastructure.Repositories
         public async Task<IEnumerable<ParkingSession>> GetAll()
         {
             return await _context.ParkingSessions
+                .Include(x => x.Price)
                 .OrderByDescending(x => x.EntryTime)
                 .ToListAsync();
         }
