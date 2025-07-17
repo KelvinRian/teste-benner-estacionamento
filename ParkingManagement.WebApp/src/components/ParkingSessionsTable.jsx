@@ -37,14 +37,16 @@ function ParkingSessionsTable({ parkingSessions, onExitSuccess }) {
                             <td>{parkingSession.licensePlate}</td>
                             <td>{new Date(parkingSession.entryTime).toLocaleString()}</td>
                             <td>{new Date(parkingSession.exitTime).toLocaleString()}</td>
-                            <td>{parkingSession.payment.duration}</td>
+                            <td>{parkingSession.payment.duration?.split('.')[0]}</td>
                             <td>{parkingSession.payment.numberOfHoursToPay}</td>
                             <td>{parkingSession.payment.priceBaseValue.toFixed(2)}</td>
                             <td>{parkingSession.payment.totalPayable.toFixed(2)}</td>
                             <td>
-                                <button onClick={() => handlerExit(parkingSession.id)}>
+                                {!parkingSession.finished && (
+                                    <button onClick={() => handlerExit(parkingSession.id)}>
                                     Sair
-                                </button>
+                                    </button>
+                                )}
                             </td>
                         </tr>
                     ))}

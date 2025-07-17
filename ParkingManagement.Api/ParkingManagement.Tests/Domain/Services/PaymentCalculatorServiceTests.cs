@@ -25,11 +25,11 @@ namespace ParkingManagement.Tests.Domain.Services
             };
 
             var price = new Price(createPriceCommand);
-
             var parkingSession = new ParkingSession(new EntryCommand(), Guid.NewGuid());
 
             typeof(ParkingSession).GetProperty("ExitTime").SetValue(parkingSession, parkingSession.EntryTime.AddHours(1));
             typeof(ParkingSession).GetProperty("Price").SetValue(parkingSession, price);
+            typeof(ParkingSession).GetProperty("Finished").SetValue(parkingSession, true);
 
             // Act
             var result = _service.CalculatePayment(parkingSession);
@@ -66,6 +66,7 @@ namespace ParkingManagement.Tests.Domain.Services
 
             typeof(ParkingSession).GetProperty("ExitTime").SetValue(parkingSession, parkingSession.EntryTime.AddMinutes(minutes));
             typeof(ParkingSession).GetProperty("Price").SetValue(parkingSession, price);
+            typeof(ParkingSession).GetProperty("Finished").SetValue(parkingSession, true);
 
             // Act
             var result = _service.CalculatePayment(parkingSession);
@@ -102,6 +103,7 @@ namespace ParkingManagement.Tests.Domain.Services
 
             typeof(ParkingSession).GetProperty("ExitTime").SetValue(parkingSession, parkingSession.EntryTime.AddHours(hours).AddMinutes(11));
             typeof(ParkingSession).GetProperty("Price").SetValue(parkingSession, price);
+            typeof(ParkingSession).GetProperty("Finished").SetValue(parkingSession, true);
 
             // Act
             var result = _service.CalculatePayment(parkingSession);
@@ -138,6 +140,7 @@ namespace ParkingManagement.Tests.Domain.Services
 
             typeof(ParkingSession).GetProperty("ExitTime").SetValue(parkingSession, parkingSession.EntryTime.AddHours(1).AddMinutes(minutes));
             typeof(ParkingSession).GetProperty("Price").SetValue(parkingSession, price);
+            typeof(ParkingSession).GetProperty("Finished").SetValue(parkingSession, true);
 
             // Act
             var result = _service.CalculatePayment(parkingSession);

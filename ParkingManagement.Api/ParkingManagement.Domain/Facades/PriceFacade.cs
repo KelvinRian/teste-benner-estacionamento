@@ -22,6 +22,8 @@ namespace ParkingManagement.Domain.Facades
 
         public async Task Delete(Guid priceId)
         {
+            if (await _priceRepository.HasAnyParkingSession(priceId))
+                throw new Exception("Não é possível excluir preço já utilizado por clientes");
             await _priceRepository.Delete(priceId);
         }
 
@@ -34,8 +36,8 @@ namespace ParkingManagement.Domain.Facades
                 Id = x.Id,
                 BaseValue = x.BaseValue,
                 ExtraTimeValue = x.ExtraTimeValue,
-                EffectivePeriodStart = x.EffectivePeriodStart,
-                EffectivePeriodEnd = x.EffectivePeriodEnd
+                EffectivePeriodStart = DateTime.SpecifyKind(x.EffectivePeriodStart, DateTimeKind.Utc),
+                EffectivePeriodEnd = DateTime.SpecifyKind(x.EffectivePeriodEnd, DateTimeKind.Utc)
             });
         }
     }

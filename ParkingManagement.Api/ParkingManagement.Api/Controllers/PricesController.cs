@@ -43,10 +43,10 @@ namespace ParkingManagement.Api.Controllers
             try
             {
                 await _priceFacade.Delete(id);
-                return Ok();
+                return NoContent();
             } catch (Exception e)
             {
-                return NoContent();
+                return StatusCode(500, $"Erro interno: {e.Message}");
             }
         }
     }

@@ -70,13 +70,17 @@ namespace ParkingManagement.Domain.Facades
 
         private ParkingSessionDto CreateParkingSessionDto(ParkingSession parkingSession)
         {
+            DateTime? exitTime = null;
+            if (parkingSession.ExitTime.HasValue)
+                exitTime = DateTime.SpecifyKind(parkingSession.ExitTime.Value, DateTimeKind.Utc);
             return new ParkingSessionDto
             {
                 Id = parkingSession.Id,
                 LicensePlate = parkingSession.LicensePlate,
-                EntryTime = parkingSession.EntryTime,
-                ExitTime = parkingSession.ExitTime,
-                Payment = _paymentCalculatorService.CalculatePayment(parkingSession)
+                EntryTime = DateTime.SpecifyKind(parkingSession.EntryTime, DateTimeKind.Utc),
+                ExitTime = exitTime,
+                Payment = _paymentCalculatorService.CalculatePayment(parkingSession),
+                Finished = parkingSession.Finished,
             };
         }
 
