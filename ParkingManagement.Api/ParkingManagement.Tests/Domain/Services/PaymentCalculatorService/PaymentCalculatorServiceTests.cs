@@ -11,7 +11,7 @@ namespace ParkingManagement.Tests.Domain.Services
         public PaymentCalculatorServiceTests()
         {
 
-            _service = new PaymentCalculatorService();
+            _service = new ParkingManagement.Domain.Services.PaymentCalculatorService.PaymentCalculatorService();
         }
 
         [Fact]
@@ -86,9 +86,9 @@ namespace ParkingManagement.Tests.Domain.Services
         }
 
         [Theory]
-        [InlineData(1, 5)]
-        [InlineData(2, 8)]
-        public void shouldCalculateExtraTime(int hours, decimal expectedTotalPayable)
+        [InlineData(1)]
+        [InlineData(2)]
+        public void shouldCalculateExtraTime(int hours)
         {
             // Arrange
             var createPriceCommand = new CreatePriceCommand()
@@ -114,11 +114,12 @@ namespace ParkingManagement.Tests.Domain.Services
             var expectedDuration = parkingSession.ExitTime - parkingSession.EntryTime;
             Assert.Equal(expectedDuration, result.Duration);
 
-            var expectedNumberOfHoursToPay = hours++;
+            var expectedNumberOfHoursToPay = ++hours;
             Assert.Equal(expectedNumberOfHoursToPay, result.NumberOfHoursToPay);
 
             Assert.Equal(price.BaseValue, result.PriceBaseValue);
 
+            var expectedTotalPayable = price.BaseValue + ((decimal)expectedNumberOfHoursToPay - 1) * price.ExtraTimeValue;
             Assert.Equal(expectedTotalPayable, result.TotalPayable);
         }
 

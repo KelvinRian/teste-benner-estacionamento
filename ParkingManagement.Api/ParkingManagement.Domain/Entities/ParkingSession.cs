@@ -25,5 +25,11 @@ namespace ParkingManagement.Domain.Entities
             ExitTime = DateTime.UtcNow;
             Finished = true;
         }
+
+        public decimal GetBaseValue()
+            => Price?.BaseValue ?? 0;
+
+        public decimal GetExtraTimeValue()
+            => Price?.ExtraTimeValue ?? 0;
     }
 }

@@ -39,5 +39,67 @@ namespace ParkingManagement.Tests.Domain.Entities
             Assert.InRange(parkingSession.ExitTime.Value, DateTime.UtcNow.AddSeconds(-59), DateTime.UtcNow.AddSeconds(59));
             Assert.Equal(DateTimeKind.Utc, parkingSession.ExitTime.Value.Kind);
         }
+
+        [Fact]
+        public void shouldGetBaseValue()
+        {
+            var expectedBaseValue = 10;
+            var priceCommand = new CreatePriceCommand()
+            {
+                BaseValue = expectedBaseValue,
+            };
+
+            var price = new Price(priceCommand);
+
+            var entryCommand = new EntryCommand();
+            var parkingSessionCommand = new ParkingSession(entryCommand, Guid.NewGuid());
+            typeof(ParkingSession).GetProperty("Price").SetValue(parkingSessionCommand, price);
+
+            var result = parkingSessionCommand.GetBaseValue();
+
+            Assert.Equal(expectedBaseValue, result);
+        }
+
+        [Fact]
+        public void shouldGetBaseValueFromNullPrice()
+        {
+            var entryCommand = new EntryCommand();
+            var parkingSessionCommand = new ParkingSession(entryCommand, Guid.NewGuid());
+
+            var result = parkingSessionCommand.GetBaseValue();
+
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void shouldGetExtraTimeValue()
+        {
+            var expectedExtraTimeValue = 11;
+            var priceCommand = new CreatePriceCommand()
+            {
+                ExtraTimeValue = expectedExtraTimeValue,
+            };
+
+            var price = new Price(priceCommand);
+
+            var entryCommand = new EntryCommand();
+            var parkingSessionCommand = new ParkingSession(entryCommand, Guid.NewGuid());
+            typeof(ParkingSession).GetProperty("Price").SetValue(parkingSessionCommand, price);
+
+            var result = parkingSessionCommand.GetExtraTimeValue();
+
+            Assert.Equal(expectedExtraTimeValue, result);
+        }
+
+        [Fact]
+        public void shouldGetExtraTimeValueFromNullPrice()
+        {
+            var entryCommand = new EntryCommand();
+            var parkingSessionCommand = new ParkingSession(entryCommand, Guid.NewGuid());
+
+            var result = parkingSessionCommand.GetExtraTimeValue();
+
+            Assert.Equal(0, result);
+        }
     }
 }

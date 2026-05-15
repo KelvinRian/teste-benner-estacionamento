@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ParkingManagement.Domain.Commands;
 using ParkingManagement.Domain.Dtos;
 using ParkingManagement.Domain.Facades;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ParkingManagement.Api.Controllers
 {

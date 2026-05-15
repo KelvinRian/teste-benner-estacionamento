@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ParkingManagement.Domain.RepositoryInterfaces;
 using ParkingManagement.Infrastructure.Repositories;
 using ParkingManagement.Domain.Facades;
+using ParkingManagement.Domain.Services.PaymentCalculatorService;
 using ParkingManagement.Domain.Services;
 
 namespace ParkingManagement.Api
